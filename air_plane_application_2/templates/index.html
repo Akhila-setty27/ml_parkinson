@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+<style>
+
+body {
+  background-image: url({{ url_for('static', filename='templates/airoplane.jpg') }})
+
+  background-repeat: no-repeat;
+  background-size: 100% 150%;
+}
+</style> 
+</head>
+
+<body background="{{ url_for('static', filename='airoplane.jpg') }}"> 
+ <div class="login"  align="center" >
+	<h1>Predict air quality index Period</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    <input type="text" name="interview_score1" placeholder="pressure" required="required" /><br><br><br>
+    <input type="text" name="interview_score2" placeholder="temperature" required="required" /><br><br><br>
+    <input type="text" name="interview_score3" placeholder="relative humidity" required="required" /><br><br><br>
+		<input type="text" name="interview_score4" placeholder="co2" required="required" /><br><br><br>
+		<input type="text" name="interview_score5" placeholder="co" required="required" /><br><br><br>
+		<input type="text" name="interview_score6" placeholder="h2s" required="required" /><br><br><br>
+    <input type="text" name="interview_score7" placeholder="so2" required="required" /><br><br><br>
+    <input type="text" name="interview_score8" placeholder="03" required="required" /><br><br><br>
+    <input type="text" name="interview_score9" placeholder="no2" required="required" /><br><br><br>
+    <input type="text" name="interview_score10" placeholder="o2" required="required" /><br><br><br>
+    <input type="text" name="interview_score11" placeholder="massConn10" required="required" /><br><br><br>
+    <input type="text" name="interview_score12" placeholder="massConn25" required="required" /><br><br><br>
+    <input type="text" name="interview_score13" placeholder="massConn40" required="required" /><br><br><br>
+    <input type="text" name="interview_score14" placeholder="massConn100" required="required" /><br><br><br>
+    <input type="text" name="interview_score15" placeholder="numConn05" required="required" /><br><br><br>
+    <input type="text" name="interview_score16" placeholder="numConn10" required="required" /><br><br><br>
+    <input type="text" name="interview_score17" placeholder="numConn25" required="required" /><br><br><br>
+    <input type="text" name="interview_score18" placeholder="numConn40" required="required" /><br><br><br>
+    <input type="text" name="interview_score19" placeholder="numConn100" required="required" /><br><br><br>
+    <input type="text" name="interview_score20" placeholder="voc" required="required" /><br><br><br>
+    <input type="text" name="interview_score21" placeholder="typPartSize" required="required" /><br><br><br>
+    <input type="text" name="interview_score22" placeholder="accelerationX" required="required" /><br><br><br>
+    <input type="text" name="interview_score23" placeholder="accelerationY" required="required" /><br><br><br>
+    <input type="text" name="interview_score24" placeholder="accelerationZ" required="required" /><br><br><br>
+    <input type="text" name="interview_score25" placeholder="totalAcceleration" required="required" /><br><br><br>
+    <input type="text" name="interview_score26" placeholder="coAqi" required="required" /><br><br><br>
+    <input type="text" name="interview_score27" placeholder="so2Aqi'" required="required" /><br><br><br>
+    <input type="text" name="interview_score28" placeholder="o3Aqi" required="required" /><br><br><br>
+    <input type="text" name="interview_score29" placeholder="no2Aqi" required="required" /><br><br><br>
+    <input type="text" name="interview_score30" placeholder="pm25Aqi" required="required" /><br><br><br>
+    <input type="text" name="interview_score31" placeholder="pm100Aqi" required="required" /><br><br><br>	
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">click for the Yield</button>
+        
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>

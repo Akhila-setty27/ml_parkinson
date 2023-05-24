@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict Parkinson Disease</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main" style="height: 1800px;width: 800px;" >      
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+            <div class="signup">
+                <form action="{{ url_for('predict')}}"method="post">
+                    <label for="chk" aria-hidden="true">Fill Data</label>
+                    <input type="text" name="txt" placeholder="MDVP:Fo(Hz) - Average vocal fundamental frequency" required="">
+                    <input type="text" name="email1" placeholder="MDVP:Fhi(Hz) - Maximum vocal fundamental frequency" required="">
+                    <input type="text" name="email2" placeholder="MDVP:Flo(Hz) - Minimum vocal fundamental frequency" required="">
+                    <input type="text" name="email3" placeholder="MDVP:Jitter(%)" required="">
+                    <input type="text" name="email4" placeholder="MDVP:Jitter(Abs)" required="">
+                    <input type="text" name="email5" placeholder="MDVP:RAP" required="">
+                    <input type="text" name="email6" placeholder="MDVP:PPQ" required="">
+                    <input type="text" name="email7" placeholder="Jitter:DDP - Several measures of variation in fundamental frequency" required="">
+                    <input type="text" name="email8" placeholder="MDVP:Shimmer" required="">
+                    <input type="text" name="email9" placeholder="MDVP:Shimmer(dB)" required="">
+                    <input type="text" name="email10" placeholder="Shimmer:APQ3" required="">
+                    <input type="text" name="email11" placeholder="Shimmer:APQ5" required="">
+                    <input type="text" name="email12" placeholder="MDVP:APQ" required="">
+                    <input type="text" name="email13" placeholder="Shimmer:DDA - Several measures of variation in amplitude" required="">
+                    <input type="text" name="email14" placeholder="NHR" required="">
+                    <input type="text" name="email15" placeholder="HNR - Two measures of the ratio of noise to tonal components in the voice" required="">
+                    <input type="text" name="email16" placeholder="RPDE" required="">
+                    <input type="text" name="email17" placeholder="D2 - Two nonlinear dynamical complexity measures" required="">
+                    <input type="text" name="email18" placeholder="DFA - Signal fractal scaling exponent" required="">
+                    <input type="text" name="email19" placeholder="spread1" required="">
+                    <input type="text" name="email20" placeholder="spread2" required="">
+                    <input type="text" name="email21" placeholder="PPE - Three nonlinear measures of fundamental frequency variation" required="">
+
+
+                    <button>Predict</button>
+                    <a style="background-color:powderblue;"> {{ prediction_text }} <a>
+                </form>
+
+               
+            </div>
+
+       
+    </div>
+</body>
+</html>
